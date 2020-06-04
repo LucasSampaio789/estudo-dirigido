@@ -1,3 +1,169 @@
 Lucas Sampaio Vieira
 lucass.1@hotmail.com
 Segue o codigo abaixo :)
+
+
+
+
+#include <stdio.h>
+int main (void) {
+ int categorias,parcelas,moed;
+ float totalf,precototal=0,descont1,totalp, valor1;
+ char re1,re2;
+ printf("Lucas Sampaio Vieira");
+ printf("\nlucass.1@hotmail.com");
+ printf("\n\nqual moeda deseja usar? \n1-R$\n2-$\n");
+ scanf("%d", &moed);
+ if (moed == 1){ //caso a moeda seja R$
+ do
+ {
+   printf(" \n\n Qual categoria voce deseja comprar?\n 1- Verduras\n 2- legumes\n 3- Carnes\n 4- Limpeza\n"); //categorias de compras
+    scanf("%d",&categorias);
+  if(categorias == 1)
+  {
+    printf("ALFACE: R$3.80 (2.0 un)\n");
+    printf("COUVE: R$4.53 (3.0 un)\n");
+    printf("Total Verduras:R$8.33 ");
+    precototal = 8.33;
+  } else {
+    if(categorias == 2)
+    {
+      printf("Cenoura : R$3.50 (0.8 KG)\n");
+      printf("Batata : R$4.70 (4.5 KG)\n");
+      printf("Vagem : R$2.80 (0.5 KG)\n");
+      printf("Total Legumes: R$11.00");
+      precototal = 11.00;
+    }
+    else
+    {
+      if(categorias == 3)
+      {
+        printf("Alcatra : R$24.90 (2.0 KG)\n");
+        printf("Patinho : R$21.50 (3.5 KG)\n");
+        printf("Total Carnes: R$46.4");
+        precototal = 46.4;
+      }
+      else
+      {
+        if(categorias == 4)
+        {
+          printf("Veja : R$5.70 (2.0 UN)\n");
+          printf("Bombril : R$1.80 (3.5 PCT)\n");
+          printf("limpol : R$1.99 (3.0 UN)\n");
+          printf("Total Limpeza : R$9.49");
+          precototal = 9.49;
+        }
+      }
+    }
+  }
+totalf += precototal;
+printf("\nVoce deseja comprar mais? S ou N\n");
+scanf(" %c", &re1);
+}while(re1 == 'S'|| re1 =='s');//enquanto S, repete-se
+printf(" O preco total da sua compra e R$ %.2f",totalf);
+printf ("\nQual o valor do desconto? (Digite apenas o numero.)\n");
+  scanf ("%f", &descont1);
+  valor1 = totalf - (descont1/100 * totalf);
+  printf ("O valor do desconto e de: %0.2f por cento, portanto o novo valor da sua compra e R$: %0.2f", descont1, valor1);
+  printf ("\nForma de pagamento : A vista ou Parcelado (A para a vista e P para parcelado)\n");
+  scanf(" %c", &re2);
+  if(re2 == 'A' || re2 == 'a') //caso seja a vista
+    {
+      printf("\nTIPO DE PAGAMENTO: A VISTA");
+      printf("\nVALOR TOTAL: R$%.2f",totalf);
+      printf("\nDESCONTO: %0.2f", descont1);
+      printf("\nVALOR A PAGAR: R$%0.2f",valor1);
+      printf("\nObrigado, volte sempre!");
+    }
+    else //caso seja parcelado
+    {
+      printf("Quantas parcelas voce deseja?:\n");
+      scanf("%d", &parcelas);
+      totalp= totalf / parcelas;
+      printf("\nTIPO DE PAGAMENTO: PARCELADO");
+      printf("\nVALOR TOTAL: R$%.2f",totalf);
+      printf("\nDESCONTO: %0.2f", descont1);
+      printf("\nVALOR A PAGAR: R$%0.2f",valor1);
+      printf("\nPARCELAS: %d", parcelas);
+      printf("\nVALOR DA PARCELA: R$%.2f", totalp);
+      printf("\nObrigado, volte sempre!");
+    }
+ }
+ //Caso a moeda seja $
+ else{
+   do
+   {
+   printf(" \n\n Qual categoria deseja comprar?\n 1- Verduras\n 2- legumes\n 3- Carnes\n 4- Limpeza\n"); //categorias de compras
+    scanf("%d",&categorias);
+  if(categorias == 1)
+  {
+    printf("ALFACE: $0.75 (2.0 un)\n");
+    printf("COUVE: $0.89 (3.0 un)\n");
+    printf("Total Verduras:$1.64 ");
+    precototal = 1.64;
+  } else {
+    if(categorias == 2)
+    {
+      printf("Cenoura : $0.69 (0.8 KG)\n");
+      printf("Batata : $0.92 (4.5 KG)\n");
+      printf("Vagem : $0.55 (0.5 KG)\n");
+      printf("Total Legumes: $2.16");
+      precototal = 2.16;
+    }
+    else
+    {
+      if(categorias == 3)
+      {
+        printf("Alcatra : $4.88 (2.0 KG)\n");
+        printf("Patinho : $4.22 (3.5 KG)\n");
+        printf("Total Carnes: $9.1");
+        precototal = 9.1;
+      }
+      else
+      {
+        if(categorias == 4)
+        {
+          printf("Veja : $1.12 (2.0 UN)\n");
+          printf("Bombril : $0.35 (3.5 PCT)\n");
+          printf("limpol : $0.39 (3.0 UN)\n");
+          printf("Total Limpeza : $1.86");
+          precototal = 1.86;
+         }
+    }
+    }
+  }
+totalf += precototal;
+printf("\nVoce deseja comprar mais? S ou N\n");
+scanf(" %c", &re1);
+}while(re1 == 'S'|| re1 =='s');//enquanto S, repete-se
+printf(" O preco total da sua compra e $%.2f",totalf);
+printf ("\nQual o valor do desconto? (Digite apenas o numero.)\n");
+  scanf ("%f", &descont1);
+  valor1 = totalf - (descont1/100 * totalf);
+  printf ("O valor do desconto e de: %0.2f por cento, portanto o novo valor da sua compra e $: %0.2f", descont1, valor1);
+   printf ("\nForma de pagamento : A vista ou Parcelado (A para a vista e P para parcelado)\n");
+  scanf(" %c", &re2);
+  if(re2 == 'A' || re2 == 'a') //caso seja a vista
+    {
+      printf("\nTIPO DE PAGAMENTO: A VISTA");
+      printf("\nVALOR TOTAL: $%.2f",totalf);
+      printf("\nDESCONTO: %0.2f", descont1);
+      printf("\nVALOR A PAGAR: $%0.2f",valor1);
+      printf("\nObrigado, volte sempre!");
+    }
+    else //caso seja parcelado
+    {
+      printf("Quantas parcelas voce deseja?:\n");
+      scanf("%d", &parcelas);
+      totalp= totalf / parcelas;
+      printf("\nTIPO DE PAGAMENTO: PARCELADO");
+      printf("\nVALOR TOTAL: $%.2f",totalf);
+      printf("\nDESCONTO: %0.2f", descont1);
+      printf("\nVALOR A PAGAR: $%0.2f",valor1);
+      printf("\nPARCELAS: %d", parcelas);
+      printf("\nVALOR DA PARCELA: $%.2f", totalp);
+      printf("\nObrigado, volte sempre!");
+    }
+ }
+}
+
